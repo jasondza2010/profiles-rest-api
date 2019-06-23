@@ -8,7 +8,6 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from rest_framework.permissions import IsAuthenticated
 
-
 from profiles_api import serializers
 from profiles_api import models
 from profiles_api import permissions
@@ -77,7 +76,7 @@ class HelloViewSet(viewsets.ViewSet):
         if serializer.is_valid():
             name = serializer.validated_data.get('name')
             message = f'Hello {name}!'
-            return Response({'message':message})
+            return Response({'message': message})
         else:
             return Response(
                 serializer.errors,
